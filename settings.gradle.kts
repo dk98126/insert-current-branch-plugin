@@ -1,0 +1,1 @@
+rootProject.name = "insert-current-branch-plugin"
