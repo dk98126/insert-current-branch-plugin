@@ -49,4 +49,14 @@ tasks {
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "21"
     }
+
+    signPlugin {
+        certificateChain.set(File(providers.environmentVariable("CERTIFICATE_CHAIN").getOrElse("/Users/d.krasnov/chain-jetbrains.crt")).readText(Charsets.UTF_8))
+        privateKey.set(File(providers.environmentVariable("PRIVATE_KEY").getOrElse("/Users/d.krasnov/private-jetbrains.pem")).readText(Charsets.UTF_8))
+        password.set(providers.environmentVariable("PRIVATE_KEY_PASSWORD"))
+    }
+
+    publishPlugin {
+        token.set(providers.environmentVariable("PUBLISH_TOKEN"))
+    }
 }
