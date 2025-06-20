@@ -1,4 +1,4 @@
-package com.github.dk98126.insertcurrentbranchplugin
+package com.github.dk98126.branchit
 
 import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnActionEvent
